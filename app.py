@@ -10,7 +10,7 @@ app = Flask(__name__)
 # Load trained model
 model = joblib.load('toxic_comment_model.pkl')
 # Connect to MongoDB
-client = MongoClient("mongodb+srv://user1:geethaajith52@cluster0.yswwkmf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+client = MongoClient("mongodb+srv://user1:geethaajith52@cluster0.yswwkmf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 db = client['toxic_comment_db']
 collection = db['predictions']
 
