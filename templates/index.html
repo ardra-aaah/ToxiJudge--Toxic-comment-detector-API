@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toxic Comment Detector</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; text-align: center; padding: 50px; }
+        input, button { padding: 10px; margin: 10px; width: 60%; }
+        .result { font-size: 1.5em; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>🚨 Toxic Comment Detector</h1>
+    <form id="commentForm">
+        <input type="text" id="commentInput" placeholder="Enter a comment" required>
+        <br>
+        <button type="submit">Check</button>
+    </form>
+    <div class="result" id="result"></div>
+
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const comment = document.getElementById('commentInput').value;
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ comment })
+            });
+            const data = await response.json();
+            document.getElementById('result').innerText = `Prediction: ${data.prediction}`;
+        });
+    </script>
+</body>
+</html>
