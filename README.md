@@ -14,7 +14,7 @@ ToxiJudge is a simple web app that detects whether a user’s comment is **toxic
 ---
 
 ##  Tech Stack
-- Python (Flask)  
+- Python (flask)  
 - scikit-learn  
 - MongoDB Atlas  
 - Render (deployment)  
@@ -35,7 +35,7 @@ ToxiJudge is a simple web app that detects whether a user’s comment is **toxic
 ---
 
 ##  Running Locally
-1. **Clone the repo**  
+1. **To clone the repo**  
    ```bash
    git clone https://github.com/ardra-aaah/ToxiJudge--Toxic-comment-detector-API.git
    cd ToxiJudge--Toxic-comment-detector-API
@@ -44,14 +44,14 @@ ToxiJudge is a simple web app that detects whether a user’s comment is **toxic
  pip install -r requirements.txt
 ```
 ## What I Learned
-  -Deploying Flask apps with Gunicorn on Render. 
+  - Major takeaway for me was fiddling around with deploying Flask apps with Gunicorn on Render. 
   - Setting up MongoDB Atlas and connecting via Python.
   - Training and saving scikit-learn models for production.
-## Future enhancements
 
+## Future enhancements
   - Add user authentication to the web app.
-  - Visualise stored predictions in a dashboard.
-  - Extend ML model with more advanced architectures (e.g., BERT).
+  - Visualise stored predictions in a dynamic dashboard.
+  - Extend ML model with more advanced architectures (like BERT).
 ## Author
 
   Ardra T J
