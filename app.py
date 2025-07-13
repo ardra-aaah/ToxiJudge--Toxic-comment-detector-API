@@ -10,7 +10,7 @@ app = Flask(__name__)
 # Load trained model
 model = joblib.load('toxic_comment_model.pkl')
 # Connect to MongoDB
-client = MongoClient("mongodb+srv://user1:geethaajith52@cluster0.yswwkmf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+client = MongoClient("mongodb+srv://user1:geethaajith52@cluster0.yswwkmf.mongodb.net/?retryWrites=true&w=majority")
 db = client['toxic_comment_db']
 collection = db['predictions']
 
@@ -26,10 +26,16 @@ def home():
 def predict():
     try:
         data = request.get_json(force=True)
+        print("Received data:", data)  # 👈 Debug print
 
         comment = data['comment']
+        print("Comment:", comment)     # 👈 Debug print
+
         prediction = model.predict([comment])[0]
+        print("Raw prediction:", prediction)  # 👈 Debug print
+
         result = 'Toxic' if prediction == 1 else 'Safe'
+        print("Result:", result)  # 👈 Debug print
 
         # Save to MongoDB
         collection.insert_one({
@@ -41,6 +47,7 @@ def predict():
           'prediction': result
         })
     except Exception as e:
+        print("Error during prediction:", str(e))  # 👈 Debug print
         return jsonify({'error': str(e)}), 400
 
 if __name__ == "__main__":
