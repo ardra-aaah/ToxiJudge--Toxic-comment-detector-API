@@ -17,19 +17,41 @@
         <button type="submit">Check</button>
     </form>
     <div class="result" id="result"></div>
-
     <script>
-        document.getElementById('commentForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const comment = document.getElementById('commentInput').value;
+    document.getElementById('commentForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const comment = document.getElementById('commentInput').value;
+        document.getElementById('result').innerText = 'Checking... 🔄';
+
+        try {
             const response = await fetch('/predict', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ comment })
             });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                document.getElementById('result').innerText = `⚠️ Error: ${errorData.error || 'Something went wrong'}`;
+                console.error('Server error:', errorData);
+                return;
+            }
+
             const data = await response.json();
-            document.getElementById('result').innerText = `Prediction: ${data.prediction}`;
-        });
+            console.log('API Response:', data);
+
+            if (data.prediction) {
+                document.getElementById('result').innerText = `✅ Prediction: ${data.prediction}`;
+            } else {
+                document.getElementById('result').innerText = `⚠️ No prediction returned!`;
+            }
+        } catch (err) {
+            console.error('Fetch error:', err);
+            document.getElementById('result').innerText = `❌ Failed to connect to server`;
+        }
+    });
     </script>
+
+
 </body>
 </html>
