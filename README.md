@@ -5,11 +5,11 @@ ToxiJudge is a simple web app that detects whether a user’s comment is **toxic
  Note: The app was deployed and live, but the MongoDB connection was disabled later for security.
 ---
 
-## 🛠 Features
+##  Features
 -  **ML-powered predictions** – Logistic Regression with TF-IDF vectorisation.  
--  **Web interface** – Clean UI to enter and test comments.  
--  **MongoDB integration** – Saves predictions for future analytics.  
--  **Deployed on Render** – Accessible from anywhere.  
+-  **Web interface** – clean UI to enter and test comments.  
+-  **MongoDB integration** – saves predictions for future analytics.  
+-  **Deployed on Render** – accessible from anywhere.  
 
 ---
 
