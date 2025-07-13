@@ -6,7 +6,7 @@ ToxiJudge is a simple web app that detects whether a user’s comment is **toxic
 ---
 
 ## 🛠 Features
--  **ML-powered predictions** – Logistic Regression with TF-IDF vectorization.  
+-  **ML-powered predictions** – Logistic Regression with TF-IDF vectorisation.  
 -  **Web interface** – Clean UI to enter and test comments.  
 -  **MongoDB integration** – Saves predictions for future analytics.  
 -  **Deployed on Render** – Accessible from anywhere.  
@@ -50,7 +50,7 @@ ToxiJudge is a simple web app that detects whether a user’s comment is **toxic
 ## Future enhancements
 
   - Add user authentication to the web app.
-  - Visualize stored predictions in a dashboard.
+  - Visualise stored predictions in a dashboard.
   - Extend ML model with more advanced architectures (e.g., BERT).
 ## Author
 
