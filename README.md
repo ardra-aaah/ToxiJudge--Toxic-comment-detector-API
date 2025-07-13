@@ -1,8 +1,8 @@
 # ToxiJudge
-This is a simple web app that detects whether a user’s comment is **toxic** or **safe**. It uses a machine learning model trained on the Jigsaw Toxic Comment dataset and is deployed with Flask on Render. Predictions are stored in a MongoDB Atlas database.  
+ToxiJudge is a simple web app that detects whether a user’s comment is **toxic** or **safe**. I made use of a machine learning model trained on the Jigsaw Toxic Comment dataset and deployed the application with Flask on Render. Also, a MongoDB Atlas database was used to store predictions.  
 
  **Live Demo**: [https://toxijudge-toxic-comment-detector-api.onrender.com](https://toxijudge-toxic-comment-detector-api.onrender.com)  
-
+** Note: The app was deployed and live, but the MongoDB connection was disabled later for security.
 ---
 
 ## 🛠 Features
